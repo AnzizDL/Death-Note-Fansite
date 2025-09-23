@@ -1,4 +1,10 @@
-/* DEATH NOTE FANSITE - CSS OPTIMISÉ */
+/* ========================================
+   DEATH NOTE FANSITE - CSS STRUCTURE
+   ======================================== */
+
+/* ========================================
+   RESET ET CONFIGURATION GLOBALE
+   ======================================== */
 
 * {
   margin: 0;
@@ -8,6 +14,7 @@
 
 body {
   font-family: Arial, sans-serif;
+  /* Fond d'écran avec superposition sombre pour la lisibilité */
   background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)),
     url("../Images/Death%20note%20wallpaper.jpep.jpg");
   background-size: cover;
@@ -18,9 +25,14 @@ body {
   color: #e0e0e0;
   line-height: 1.6;
   min-height: 100vh;
+  /* Layout flexbox pour footer en bas */
   display: flex;
   flex-direction: column;
 }
+
+/* ========================================
+   HEADER ET NAVIGATION
+   ======================================== */
 
 header {
   background-color: #000;
@@ -28,6 +40,7 @@ header {
   border-bottom: 2px solid #8b0000;
 }
 
+/* Logo principal */
 .logo {
   display: block;
   max-width: 300px;
@@ -36,10 +49,12 @@ header {
   filter: drop-shadow(2px 2px 4px rgba(255, 0, 0, 0.5));
 }
 
+/* Titre masqué (SEO) */
 header h1 {
   display: none;
 }
 
+/* Navigation principale */
 nav ul {
   list-style: none;
   display: flex;
@@ -63,6 +78,7 @@ nav a {
   letter-spacing: 1px;
 }
 
+/* États des liens de navigation */
 nav a:hover {
   background-color: #8b0000;
   color: #fff;
@@ -76,13 +92,18 @@ nav a.active {
   box-shadow: 0 2px 8px rgba(255, 0, 0, 0.6);
 }
 
+/* ========================================
+   CONTENU PRINCIPAL
+   ======================================== */
+
 main {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
-  flex: 1;
+  flex: 1; /* Pousse le footer vers le bas */
 }
 
+/* Titres */
 h1 {
   text-align: center;
   color: white;
@@ -97,6 +118,7 @@ h2 {
   font-size: 1.5rem;
 }
 
+/* Image principale d'accueil */
 .image-acceuil {
   display: block;
   width: 800px;
@@ -104,7 +126,7 @@ h2 {
   height: auto;
   margin: 2rem auto;
   border-radius: 15px;
-  box-shadow: 0px 0px 0px rgb(255, 0, 0);
+  box-shadow: 0px 0px 0px rgb(255, 0, 0); /* Pas d'ombre initiale */
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
 }
 
@@ -113,12 +135,21 @@ h2 {
   box-shadow: 0 12px 30px rgb(250, 0, 0);
   opacity: 1;
 }
+.logo-pomme {
+  width: 50px;
+  height: auto;
+  margin-left: 10px;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
 
 footer {
   background-color: #000;
   border-top: 2px solid #8b0000;
   padding: 2rem 0;
-  margin-top: auto;
+  margin-top: auto; /* Colle le footer en bas */
   box-shadow: 0 -2px 10px rgba(255, 0, 0, 0.3);
 }
 
@@ -162,6 +193,11 @@ footer {
   text-decoration: underline;
 }
 
+/* ========================================
+   ÉLÉMENTS DE CONTENU
+   ======================================== */
+
+/* Paragraphes avec style "carte" */
 p {
   margin: 1.5rem 0;
   text-align: justify;
@@ -169,14 +205,15 @@ p {
   background-color: #2a2a2a;
   padding: 1.5rem;
   border-radius: 10px;
-  border-left: 4px solid #ff0000;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+/* Sections générales */
 section {
   margin: 2rem 0;
 }
 
+/* Articles avec bordure colorée */
 article {
   background-color: #2a2a2a;
   padding: 1.5rem;
@@ -185,6 +222,7 @@ article {
   border-left: 4px solid #8b0000;
 }
 
+/* Barres latérales */
 aside {
   background-color: #1a1a1a;
   padding: 1.5rem;
@@ -198,6 +236,11 @@ aside h3 {
   margin-bottom: 1rem;
 }
 
+/* ========================================
+   SECTIONS SPÉCIALISÉES
+   ======================================== */
+
+/* Sections pour réalisations, événements et vidéos */
 .realisation-section,
 .events-section,
 .video-section,
@@ -217,6 +260,7 @@ aside h3 {
   font-size: 1.5rem;
 }
 
+/* Articles pour événements et actualités */
 .event-item,
 .milestone-item,
 .news-item {
@@ -227,13 +271,16 @@ aside h3 {
   border-left: 3px solid #8b0000;
 }
 
+/* États des événements */
 .event-item.upcoming {
-  border-left-color: #00ff00;
-}
-.event-item.past {
-  border-left-color: #666;
+  border-left-color: #00ff00; /* Vert pour les événements à venir */
 }
 
+.event-item.past {
+  border-left-color: #666; /* Gris pour les événements passés */
+}
+
+/* Dates d'événements et actualités */
 .event-date,
 .news-date {
   color: #ff6666;
@@ -241,6 +288,11 @@ aside h3 {
   font-size: 0.9rem;
 }
 
+/* ========================================
+   GALERIE PHOTOS
+   ======================================== */
+
+/* Grille responsive pour les photos */
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -248,6 +300,7 @@ aside h3 {
   margin: 2rem 0;
 }
 
+/* Cartes photo et placeholders */
 .photo-item,
 .photo-placeholder {
   background-color: #2a2a2a;
@@ -262,12 +315,14 @@ aside h3 {
   transform: translateY(-5px);
 }
 
+/* Images de galerie */
 .gallery-img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: fill
 }
 
+/* Légendes des photos */
 .photo-caption {
   padding: 1rem;
   text-align: center;
@@ -275,6 +330,7 @@ aside h3 {
   margin: 0;
 }
 
+/* Contenu des placeholders */
 .placeholder-content {
   padding: 2rem;
   text-align: center;
@@ -286,6 +342,11 @@ aside h3 {
   margin-bottom: 1rem;
 }
 
+/* ========================================
+   VIDÉOS
+   ======================================== */
+
+/* Conteneurs pour les vidéos */
 .video-item {
   margin: 2rem 0;
   padding: 1.5rem;
@@ -302,6 +363,7 @@ aside h3 {
   max-width: 800px;
 }
 
+/* Lecteurs vidéo */
 .video-player {
   width: 100%;
   max-width: 800px;
@@ -315,12 +377,18 @@ aside h3 {
   border-radius: 8px;
 }
 
+/* Descriptions vidéo */
 .video-description {
   margin-top: 0.5rem;
   font-style: italic;
   color: #ccc;
 }
 
+/* ========================================
+   FORMULAIRES DE CONTACT
+   ======================================== */
+
+/* Conteneur principal du formulaire */
 .contact-form {
   background-color: #2a2a2a;
   padding: 2rem;
@@ -328,6 +396,7 @@ aside h3 {
   margin: 2rem 0;
 }
 
+/* Groupes de champs */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -339,6 +408,7 @@ aside h3 {
   font-weight: bold;
 }
 
+/* Champs de saisie */
 .form-group input,
 .form-group select,
 .form-group textarea {
@@ -351,6 +421,7 @@ aside h3 {
   font-size: 1rem;
 }
 
+/* Focus sur les champs */
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
@@ -359,6 +430,7 @@ aside h3 {
   box-shadow: 0 0 5px rgba(255, 0, 0, 0.3);
 }
 
+/* Cases à cocher */
 .checkbox-group {
   display: flex;
   align-items: center;
@@ -370,6 +442,7 @@ aside h3 {
   margin-right: 0.5rem;
 }
 
+/* Actions du formulaire */
 .form-actions {
   display: flex;
   gap: 1rem;
@@ -377,6 +450,7 @@ aside h3 {
   margin-top: 2rem;
 }
 
+/* Boutons */
 .btn-submit,
 .btn-reset {
   padding: 1rem 2rem;
@@ -407,6 +481,11 @@ aside h3 {
   background-color: #555;
 }
 
+/* ========================================
+   LIENS ET BOUTONS
+   ======================================== */
+
+/* Groupes de liens externes et sociaux */
 .external-links,
 .social-links,
 .partner-links {
@@ -417,6 +496,7 @@ aside h3 {
   justify-content: center;
 }
 
+/* Style des liens externes et sociaux */
 .external-link,
 .social-link {
   display: inline-block;
@@ -436,6 +516,11 @@ aside h3 {
   box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3);
 }
 
+/* ========================================
+   SECTIONS INFORMATIVES
+   ======================================== */
+
+/* Méthodes de contact */
 .contact-methods {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -450,6 +535,7 @@ aside h3 {
   text-align: center;
 }
 
+/* FAQ */
 .faq-item {
   margin: 1.5rem 0;
   padding: 1.5rem;
@@ -463,6 +549,7 @@ aside h3 {
   margin-bottom: 0.5rem;
 }
 
+/* Avertissements et informations */
 .video-disclaimer,
 .gallery-info {
   background-color: #333;
@@ -472,6 +559,7 @@ aside h3 {
   border: 2px solid #666;
 }
 
+/* Section actualités */
 .news-section {
   margin: 3rem 0;
   padding: 2rem;
