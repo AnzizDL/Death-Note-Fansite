@@ -1,164 +1,327 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actualités - Death Note Fan Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'death-red': '#8b0000',
+                        'death-dark': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="Assets/Css/style.css">
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    </style>
 </head>
 
-<body>
-    <header>
-        <h1>Death Note</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="actualites.html" class="active">Actualités</a></li>
-                <li><a href="realisations.html">Réalisations</a></li>
-                <li><a href="evenements.html">Événements</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="videos.html">Vidéos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-100 min-h-screen" style="background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('Assets/Images/Death note wallpaper.jpep.jpg'); background-size: cover; background-attachment: fixed;">
 
-    <main>
-        <section class="page-header">
-            <h1>Actualités Death Note</h1>
-            <p>Toutes les dernières nouvelles sur l'univers Death Note</p>
-        </section>
-
-        <section class="news-section">
-            <h2>Dernières Actualités</h2>
-
-            <article class="news-item">
-                <h3>Nouveau projet Death Note annoncé pour 2026</h3>
-                <p class="news-date">20 septembre 2025</p>
-                <p>Les studios japonais viennent d'annoncer un nouveau projet autour de Death Note pour célébrer les 20
-                    ans du manga. Les détails restent secrets mais une annonce officielle est prévue lors du prochain
-                    salon du manga de Tokyo.</p>
-                <p>Cette nouvelle a créé une vague d'excitation chez les fans du monde entier. Sera-ce un nouveau film,
-                    une série, ou peut-être une suite du manga original ?</p>
-            </article>
-
-            <article class="news-item">
-                <h3>Réédition collector du manga en France</h3>
-                <p class="news-date">15 septembre 2025</p>
-                <p>Les éditions françaises annoncent une réédition collector de Death Note avec des illustrations
-                    inédites de Takeshi Obata. Cette édition limitée comprendra :</p>
-                <ul>
-                    <li>Les 12 tomes dans un coffret exclusif</li>
-                    <li>Un artbook de 50 pages</li>
-                    <li>Des cartes collector</li>
-                    <li>Un marque-page Death Note</li>
-                </ul>
-                <p>Sortie prévue en décembre 2025, pré-commandes ouvertes dès maintenant.</p>
-            </article>
-
-            <article class="news-item">
-                <h3>Death Note Musical : tournée européenne confirmée</h3>
-                <p class="news-date">10 septembre 2025</p>
-                <p>Après le succès au Japon, la comédie musicale Death Note partira en tournée européenne en 2026. Les
-                    dates confirmées incluent :</p>
-                <ul>
-                    <li>Paris - Théâtre du Châtelet (Mars 2026)</li>
-                    <li>Londres - West End (Avril 2026)</li>
-                    <li>Berlin - Theater des Westens (Mai 2026)</li>
-                </ul>
-                <p>La production française sera traduite et adaptée par l'équipe des Misérables.</p>
-            </article>
-
-            <article class="news-item">
-                <h3>Collaboration Death Note x Netflix pour une nouvelle série</h3>
-                <p class="news-date">5 septembre 2025</p>
-                <p>Netflix annonce officiellement le développement d'une nouvelle série Death Note, cette fois en
-                    collaboration directe avec les créateurs originaux Tsugumi Ohba et Takeshi Obata.</p>
-                <p>Contrairement au film de 2017, cette série se déroulera au Japon et respectera fidèlement l'univers
-                    original. Le casting et la date de sortie seront révélés prochainement.</p>
-            </article>
-        </section>
-
-        <section class="news-section">
-            <h2>Archives des Actualités</h2>
-
-            <article class="news-item">
-                <h3>20ème anniversaire du manga célébré dans le monde entier</h3>
-                <p class="news-date">1er décembre 2023</p>
-                <p>Le 1er décembre 2023 marquait exactement 20 ans depuis la première publication de Death Note. Des
-                    événements spéciaux ont eu lieu dans les librairies et conventions du monde entier.</p>
-            </article>
-
-            <article class="news-item">
-                <h3>Takeshi Obata révèle des croquis inédits</h3>
-                <p class="news-date">15 août 2023</p>
-                <p>L'illustrateur légendaire a partagé sur ses réseaux sociaux des croquis inédits de Light et L, créés
-                    pendant la production du manga original mais jamais publiés.</p>
-            </article>
-
-            <article class="news-item">
-                <h3>Death Note entre au patrimoine culturel japonais</h3>
-                <p class="news-date">3 juin 2023</p>
-                <p>Le gouvernement japonais a officiellement reconnu Death Note comme faisant partie du patrimoine
-                    culturel moderne du Japon, aux côtés d'autres mangas emblématiques.</p>
-            </article>
-        </section>
-
-        <aside class="newsletter-section">
-            <h2>Newsletter</h2>
-            <p>Restez informé des dernières actualités Death Note !</p>
-            <form class="newsletter-form" action="#" method="post">
-                <div class="form-group">
-                    <label for="email-newsletter">Votre email :</label>
-                    <input type="email" id="email-newsletter" name="email" required>
+    <header class="bg-black border-b-2 border-death-red shadow-lg sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="Assets/Images/Logo_pomme_death_note.png" alt="Death Note Logo" class="w-12 h-12 transition-transform hover:scale-110 duration-300">
+                    <h1 class="text-2xl md:text-3xl font-bold text-white tracking-wider hidden md:block">DEATH NOTE</h1>
                 </div>
-                <button type="submit" class="btn-submit">S'inscrire</button>
-            </form>
-        </aside>
-
-        <section class="social-news">
-            <h2>Suivez l'actualité sur les réseaux</h2>
-            <div class="social-links">
-                <a href="https://twitter.com/deathnote_official" target="_blank" class="social-link">Twitter
-                    Officiel</a>
-                <a href="https://facebook.com/deathnote" target="_blank" class="social-link">Facebook</a>
-                <a href="https://instagram.com/deathnote_official" target="_blank" class="social-link">Instagram</a>
-                <a href="https://reddit.com/r/deathnote" target="_blank" class="social-link">Reddit</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <!-- Navigation du footer -->
-            <div class="footer-section footer-nav">
-                <h3>Navigation rapide</h3>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="actualites.html">Actualités</a></li>
-                        <li><a href="realisations.html">Réalisations</a></li>
-                        <li><a href="evenements.html">Événements</a></li>
-                        <li><a href="galerie.html">Galerie</a></li>
-                        <li><a href="videos.html">Vidéos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-1">
+                        <li><a href="index.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Accueil</a></li>
+                        <li><a href="actualites.html" class="active nav-link px-4 py-2 rounded-lg bg-death-red text-white font-semibold uppercase text-sm tracking-wide">Actualités</a></li>
+                        <li><a href="realisations.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Réalisations</a></li>
+                        <li><a href="evenements.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Événements</a></li>
+                        <li><a href="galerie.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Galerie</a></li>
+                        <li><a href="videos.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Vidéos</a></li>
+                        <li><a href="contact.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Contact</a></li>
                     </ul>
                 </nav>
             </div>
+            
+            <nav id="mobile-menu" class="hidden md:hidden pb-4">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="index.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Accueil</a></li>
+                    <li><a href="actualites.html" class="block px-4 py-2 rounded-lg bg-death-red text-white font-semibold uppercase text-sm">Actualités</a></li>
+                    <li><a href="realisations.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Réalisations</a></li>
+                    <li><a href="evenements.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Événements</a></li>
+                    <li><a href="galerie.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Galerie</a></li>
+                    <li><a href="videos.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Vidéos</a></li>
+                    <li><a href="contact.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            <!-- Informations légales et copyright -->
-            <div class="footer-section footer-info">
-                <p>&copy; 2024 Death Note Fan Site. Site de fans créé par passion.</p>
-                <p>Death Note © Tsugumi Ohba & Takeshi Obata. Tous droits réservés aux ayants droit.</p>
-                <p>
-                    <a href="contact.html">Contact</a> |
-                    <a href="#mentions-legales">Mentions légales</a> |
-                    <a href="#privacy">Confidentialité</a>
-                </p>
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="text-center mb-12 fade-in-up">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wider drop-shadow-lg flex items-center justify-center">
+                <svg class="w-10 h-10 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"/>
+                    <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"/>
+                </svg>
+                Actualités Death Note
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Toutes les dernières nouvelles sur l'univers Death Note 📰
+            </p>
+        </div>
+
+        <div class="grid lg:grid-cols-3 gap-8">
+            <!-- Contenu principal -->
+            <div class="lg:col-span-2 space-y-8">
+                <section class="fade-in-up" style="animation-delay: 0.1s;">
+                    <h2 class="text-3xl font-bold text-red-500 mb-6 flex items-center">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                        </svg>
+                        Dernières Actualités
+                    </h2>
+
+                    <!-- News 1 -->
+                    <article class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 mb-8">
+                        <span class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-semibold rounded-full mb-3">🔥 NOUVEAU</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">Nouveau projet Death Note annoncé pour 2026</h3>
+                        <p class="text-red-400 text-sm mb-4 flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            </svg>
+                            20 septembre 2025
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Les studios japonais viennent d'annoncer un nouveau projet autour de Death Note pour célébrer les 20 ans du manga. Les détails restent secrets mais une annonce officielle est prévue lors du prochain salon du manga de Tokyo.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Cette nouvelle a créé une vague d'excitation chez les fans du monde entier. Sera-ce un nouveau film, une série, ou peut-être une suite du manga original ?
+                        </p>
+                    </article>
+
+                    <!-- News 2 -->
+                    <article class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 mb-8">
+                        <span class="inline-block px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full mb-3">📚 COLLECTOR</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">Réédition collector du manga en France</h3>
+                        <p class="text-red-400 text-sm mb-4 flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            </svg>
+                            15 septembre 2025
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Les éditions françaises annoncent une réédition collector de Death Note avec des illustrations inédites de Takeshi Obata. Cette édition limitée comprendra :
+                        </p>
+                        <ul class="list-none space-y-2 text-gray-300 mb-4">
+                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Les 12 tomes dans un coffret exclusif</li>
+                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Un artbook de 50 pages</li>
+                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Des cartes collector</li>
+                            <li class="flex items-center"><span class="text-red-500 mr-2">✓</span> Un marque-page Death Note</li>
+                        </ul>
+                        <p class="text-gray-300 leading-relaxed">
+                            Sortie prévue en décembre 2025, pré-commandes ouvertes dès maintenant.
+                        </p>
+                    </article>
+
+                    <!-- News 3 -->
+                    <article class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 mb-8">
+                        <span class="inline-block px-3 py-1 bg-pink-600 text-white text-xs font-semibold rounded-full mb-3">🎭 MUSICAL</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">Death Note Musical : tournée européenne confirmée</h3>
+                        <p class="text-red-400 text-sm mb-4 flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            </svg>
+                            10 septembre 2025
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Après le succès au Japon, la comédie musicale Death Note partira en tournée européenne en 2026. Les dates confirmées incluent :
+                        </p>
+                        <ul class="list-none space-y-2 text-gray-300 mb-4">
+                            <li class="flex items-center"><span class="text-red-500 mr-2">📍</span> Paris - Théâtre du Châtelet (Mars 2026)</li>
+                            <li class="flex items-center"><span class="text-red-500 mr-2">📍</span> Londres - West End (Avril 2026)</li>
+                            <li class="flex items-center"><span class="text-red-500 mr-2">📍</span> Berlin - Theater des Westens (Mai 2026)</li>
+                        </ul>
+                        <p class="text-gray-300 leading-relaxed">
+                            La production française sera traduite et adaptée par l'équipe des Misérables.
+                        </p>
+                    </article>
+
+                    <!-- News 4 -->
+                    <article class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 mb-8">
+                        <span class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-semibold rounded-full mb-3">🎬 NETFLIX</span>
+                        <h3 class="text-2xl font-bold text-white mb-3">Collaboration Death Note x Netflix pour une nouvelle série</h3>
+                        <p class="text-red-400 text-sm mb-4 flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                            </svg>
+                            5 septembre 2025
+                        </p>
+                        <p class="text-gray-300 leading-relaxed mb-4">
+                            Netflix annonce officiellement le développement d'une nouvelle série Death Note, cette fois en collaboration directe avec les créateurs originaux Tsugumi Ohba et Takeshi Obata.
+                        </p>
+                        <p class="text-gray-300 leading-relaxed">
+                            Contrairement au film de 2017, cette série se déroulera au Japon et respectera fidèlement l'univers original. Le casting et la date de sortie seront révélés prochainement.
+                        </p>
+                    </article>
+                </section>
+
+                <!-- Archives -->
+                <section class="fade-in-up" style="animation-delay: 0.3s;">
+                    <h2 class="text-3xl font-bold text-red-500 mb-6 flex items-center">
+                        <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z"/>
+                            <path fill-rule="evenodd" d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        Archives
+                    </h2>
+
+                    <div class="space-y-6">
+                        <article class="bg-gray-800 p-6 rounded-xl border-l-4 border-death-red hover:bg-gray-750 transition-colors duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">20ème anniversaire du manga célébré dans le monde entier</h3>
+                            <p class="text-red-400 text-sm mb-3">1er décembre 2023</p>
+                            <p class="text-gray-300">Le 1er décembre 2023 marquait exactement 20 ans depuis la première publication de Death Note. Des événements spéciaux ont eu lieu dans les librairies et conventions du monde entier.</p>
+                        </article>
+
+                        <article class="bg-gray-800 p-6 rounded-xl border-l-4 border-death-red hover:bg-gray-750 transition-colors duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">Takeshi Obata révèle des croquis inédits</h3>
+                            <p class="text-red-400 text-sm mb-3">15 août 2023</p>
+                            <p class="text-gray-300">L'illustrateur légendaire a partagé sur ses réseaux sociaux des croquis inédits de Light et L, créés pendant la production du manga original mais jamais publiés.</p>
+                        </article>
+
+                        <article class="bg-gray-800 p-6 rounded-xl border-l-4 border-death-red hover:bg-gray-750 transition-colors duration-300">
+                            <h3 class="text-xl font-bold text-white mb-2">Death Note entre au patrimoine culturel japonais</h3>
+                            <p class="text-red-400 text-sm mb-3">3 juin 2023</p>
+                            <p class="text-gray-300">Le gouvernement japonais a officiellement reconnu Death Note comme faisant partie du patrimoine culturel moderne du Japon, aux côtés d'autres mangas emblématiques.</p>
+                        </article>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Sidebar -->
+            <aside class="space-y-8">
+                <!-- Newsletter -->
+                <div class="bg-gradient-to-br from-death-red to-red-900 p-6 rounded-2xl shadow-xl fade-in-up" style="animation-delay: 0.2s;">
+                    <h2 class="text-2xl font-bold text-white mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        Newsletter
+                    </h2>
+                    <p class="text-white mb-4">Restez informé des dernières actualités Death Note !</p>
+                    <form class="newsletter-form space-y-3">
+                        <input type="email" placeholder="votre@email.com" required
+                               class="w-full px-4 py-3 bg-white bg-opacity-20 border border-white border-opacity-30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-white">
+                        <button type="submit" class="w-full bg-white text-death-red font-bold py-3 px-6 rounded-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                            S'inscrire
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Réseaux sociaux -->
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-800 fade-in-up" style="animation-delay: 0.3s;">
+                    <h2 class="text-2xl font-bold text-red-500 mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+                            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
+                        </svg>
+                        Suivez-nous
+                    </h2>
+                    <div class="space-y-3">
+                        <a href="https://twitter.com/deathnote_official" target="_blank" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-blue-600 transition-all duration-300 group">
+                            <svg class="w-6 h-6 text-blue-400 group-hover:text-white mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/></svg>
+                            <span class="text-gray-300 group-hover:text-white font-semibold">Twitter</span>
+                        </a>
+                        <a href="https://facebook.com/deathnote" target="_blank" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-blue-700 transition-all duration-300 group">
+                            <svg class="w-6 h-6 text-blue-500 group-hover:text-white mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                            <span class="text-gray-300 group-hover:text-white font-semibold">Facebook</span>
+                        </a>
+                        <a href="https://instagram.com/deathnote_official" target="_blank" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-pink-600 transition-all duration-300 group">
+                            <svg class="w-6 h-6 text-pink-500 group-hover:text-white mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                            <span class="text-gray-300 group-hover:text-white font-semibold">Instagram</span>
+                        </a>
+                        <a href="https://reddit.com/r/deathnote" target="_blank" class="flex items-center p-3 bg-gray-800 rounded-lg hover:bg-orange-600 transition-all duration-300 group">
+                            <svg class="w-6 h-6 text-orange-500 group-hover:text-white mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/></svg>
+                            <span class="text-gray-300 group-hover:text-white font-semibold">Reddit</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Raccourcis -->
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-800 fade-in-up" style="animation-delay: 0.4s;">
+                    <h2 class="text-2xl font-bold text-red-500 mb-4">Explorer</h2>
+                    <div class="space-y-2">
+                        <a href="galerie.html" class="block p-3 bg-gray-800 rounded-lg hover:bg-death-red transition-colors duration-300 text-gray-300 hover:text-white font-semibold">
+                            🖼️ Galerie Photos
+                        </a>
+                        <a href="videos.html" class="block p-3 bg-gray-800 rounded-lg hover:bg-death-red transition-colors duration-300 text-gray-300 hover:text-white font-semibold">
+                            🎬 Vidéos
+                        </a>
+                        <a href="evenements.html" class="block p-3 bg-gray-800 rounded-lg hover:bg-death-red transition-colors duration-300 text-gray-300 hover:text-white font-semibold">
+                            📅 Événements
+                        </a>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="bg-black border-t-2 border-death-red mt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4">Navigation</h3>
+                    <nav>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="index.html" class="hover:text-red-500 transition-colors">› Accueil</a></li>
+                            <li><a href="actualites.html" class="hover:text-red-500 transition-colors">› Actualités</a></li>
+                            <li><a href="realisations.html" class="hover:text-red-500 transition-colors">› Réalisations</a></li>
+                            <li><a href="evenements.html" class="hover:text-red-500 transition-colors">› Événements</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4">À propos</h3>
+                    <p class="text-gray-400 leading-relaxed">Site de fans dédié à l'univers Death Note.</p>
+                </div>
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="galerie.html" class="hover:text-red-500 transition-colors">› Galerie</a></li>
+                        <li><a href="videos.html" class="hover:text-red-500 transition-colors">› Vidéos</a></li>
+                        <li><a href="contact.html" class="hover:text-red-500 transition-colors">› Nous contacter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center">
+                <p class="text-gray-500">&copy; 2024 Death Note Fan Site. Death Note © Tsugumi Ohba & Takeshi Obata.</p>
             </div>
         </div>
     </footer>
+
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-death-red text-white p-4 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-red-700 hover:scale-110 z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script src="Assets/Js/script.js"></script>
 </body>
 
 </html>

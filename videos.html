@@ -1,196 +1,356 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vidéos - Death Note</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'death-red': '#8b0000',
+                        'death-dark': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="Assets/Css/style.css">
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        .video-responsive {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        .video-responsive iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <h1>Death Note</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="actualites.html">Actualités</a></li>
-                <li><a href="realisations.html">Réalisations</a></li>
-                <li><a href="evenements.html">Événements</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="videos.html" class="active">Videos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-100 min-h-screen" style="background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('Assets/Images/Death note wallpaper.jpep.jpg'); background-size: cover; background-attachment: fixed;">
 
-    <main>
-        <h1>Vidéos</h1>
-
-        <section class="video-section">
-            <h2>Bandes-Annonces Films</h2>
-
-            <div class="video-item">
-                <h3>Death Note (2006) - Bande-Annonce Officielle</h3>
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/mdZQ-_GLzYs?si=O1KorgycUlvXQCWH" 
-              title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-               referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <header class="bg-black border-b-2 border-death-red shadow-lg sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="Assets/Images/Logo_pomme_death_note.png" alt="Death Note Logo" class="w-12 h-12 transition-transform hover:scale-110 duration-300">
+                    <h1 class="text-2xl md:text-3xl font-bold text-white tracking-wider hidden md:block">DEATH NOTE</h1>
                 </div>
-                <p class="video-description">Bande-annonce du premier film live-action Death Note réalisé par Shusuke
-                    Kaneko.</p>
-            </div>
-
-            <div class="video-item">
-                <h3>Death Note Netflix (2017) - Teaser</h3>
-                <div class="video-container">
-                   <iframe width="560" height="315" src="https://www.youtube.com/embed/gvxNaSIB_WI?si=kc4b12ASZc_8oDns"
-                    title="YouTube video player" frameborder="0"
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                   referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <p class="video-description">Teaser officiel du film Death Note produit par Netflix.</p>
-            </div>
-        </section>
-
-        <section class="video-section">
-            <h2>Scenes Cultes</h2>
-
-            <div class="video-item">
-                <h3>Scène Mythique de la chips</h3>
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/uf-vZ44LXHs?si=5enbtiuX_dDN5emw" title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-            <div class="video-item">
-                <h3>Scène Culte - Première rencontre Light et Ryuk en VF</h3>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/_1rlpBvR3oY?si=bpV9ZhCVkpf4H6Mx" title="YouTube video player" frameborder="0"
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                      referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <p class="video-description">Extrait de la première rencontre entre Light Yagami et Ryuk, moment
-                    emblématique de la série.</p>
-            </div>
-
-            <div class="video-item">
-                <h3>Death Note - Vidéo YouTube Ajoutée</h3>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/2RJAvHvOL3w"
-                        title="Death Note Video" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen class="youtube-video">
-                    </iframe>
-                </div>
-                <p class="video-description">Vidéo Death Note ajoutée depuis YouTube.</p>
-            </div>
-        </section>
-
-        <section class="video-section">
-            <h2>Interviews et Making-Of</h2>
-
-            <div class="video-item">
-                <h3>Death Note Opening 1 - "The WORLD" (Officiel)</h3>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8QE9cmfxx4s"
-                        title="Death Note Opening 1" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen class="youtube-video">
-                    </iframe>
-                </div>
-                <p class="video-description">Opening officiel de l'anime Death Note - "The WORLD" par Nightmare.</p>
-            </div>
-
-            <div class="video-item">
-                <h3>Interview des Créateurs</h3>
-                <div class="video-container">
-                    <video controls poster="Assets/Images/Death-Note-Logo-2048x1152.png" class="video-player">
-                        <source src="videos/creators-interview.mp4" type="video/mp4">
-                        <source src="videos/creators-interview.webm" type="video/webm">
-                        <p>Votre navigateur ne supporte pas la balise vidéo HTML5.
-                            <a href="https://youtube.com/watch?v=creatorsinterview">Regarder sur YouTube</a>
-                        </p>
-                    </video>
-                </div>
-                <p class="video-description">Interview exclusive avec Tsugumi Ohba et Takeshi Obata sur la création de
-                    Death Note.</p>
-            </div>
-        </section>
-
-        <section class="video-section">
-            <h2>Musiques et Ambiances</h2>
-
-            <div class="video-item">
-                <h3>OST - "Light's Theme" (Audio)</h3>
-                <div class="video-container">
-                  <iframe width="560" height="315" src="https://www.youtube.com/embed/qR6dzwQahOM?si=H6s8Kx2J_WQbil3M" title="YouTube video player" frameborder="0"
-                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-                <p class="video-description">Thème musical de Light Yagami composé par Yoshihisa Hirano et Hideki
-                    Taniuchi.</p>
-            </div>
-        </section>
-  <div class="video-item">
-                <h3>Opening 1 - "The WORLD" par Nightmare</h3>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/oG7EaSELOiM?si=UoDz6trbYxWQz8O0"
-                     title="YouTube video player" frameborder="0" 
-                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </video>
-                </div>
-                <p class="video-description">Premier générique d'ouverture de l'anime Death Note avec la chanson "The
-                    WORLD".</p>
-            </div>
-        <div class="youtube-links">
-            <h2>Chaînes YouTube Recommandées</h2>
-            <div class="external-links">
-                <a href="https://youtube.com/channel/death-note-official" target="_blank" class="external-link">Chaîne
-                    Officielle Death Note</a>
-                <a href="https://youtube.com/channel/anime-reviews" target="_blank" class="external-link">Reviews et
-                    Analyses</a>
-                <a href="https://youtube.com/channel/manga-discussions" target="_blank" class="external-link">
-                    Discussions Manga</a>
-            </div>
-        </div>
-
-        <div class="video-disclaimer">
-            <h2>Note Importante</h2>
-            <p>Les fichiers vidéo présents sur cette page sont des exemples pour démonstration. Les vrais contenus vidéo
-                seraient hébergés sur des plateformes comme YouTube ou Vimeo pour des raisons de performance et de
-                droits d'auteur. Tous les contenus appartiennent à leurs propriétaires respectifs.</p>
-        </div>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <!-- Navigation du footer -->
-            <div class="footer-section footer-nav">
-                <h3>Navigation rapide</h3>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="realisations.html">Réalisations</a></li>
-                        <li><a href="evenements.html">Événements</a></li>
-                        <li><a href="galerie.html">Galerie</a></li>
-                        <li><a href="videos.html">Vidéos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-1">
+                        <li><a href="index.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Accueil</a></li>
+                        <li><a href="actualites.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Actualités</a></li>
+                        <li><a href="realisations.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Réalisations</a></li>
+                        <li><a href="evenements.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Événements</a></li>
+                        <li><a href="galerie.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Galerie</a></li>
+                        <li><a href="videos.html" class="active nav-link px-4 py-2 rounded-lg bg-death-red text-white font-semibold uppercase text-sm tracking-wide">Vidéos</a></li>
+                        <li><a href="contact.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Contact</a></li>
                     </ul>
                 </nav>
             </div>
+            
+            <nav id="mobile-menu" class="hidden md:hidden pb-4">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="index.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Accueil</a></li>
+                    <li><a href="actualites.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Actualités</a></li>
+                    <li><a href="realisations.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Réalisations</a></li>
+                    <li><a href="evenements.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Événements</a></li>
+                    <li><a href="galerie.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Galerie</a></li>
+                    <li><a href="videos.html" class="block px-4 py-2 rounded-lg bg-death-red text-white font-semibold uppercase text-sm">Vidéos</a></li>
+                    <li><a href="contact.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            <!-- Informations légales et copyright -->
-            <div class="footer-section footer-info">
-                <p>&copy; 2024 Death Note Fan Site. Site de fans créé par passion.</p>
-                <p>Death Note © Tsugumi Ohba & Takeshi Obata. Tous droits réservés aux ayants droit.</p>
-                <p>
-                    <a href="contact.html">Contact</a> |
-                    <a href="#mentions-legales">Mentions légales</a> |
-                    <a href="#privacy">Confidentialité</a>
-                </p>
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="text-center mb-12 fade-in-up">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wider drop-shadow-lg flex items-center justify-center">
+                <svg class="w-10 h-10 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"/>
+                </svg>
+                Vidéos Death Note
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Découvrez les meilleures vidéos de l'univers Death Note 🎬
+            </p>
+        </div>
+
+        <!-- Bandes-Annonces Films -->
+        <section class="mb-16 fade-in-up" style="animation-delay: 0.1s;">
+            <h2 class="text-3xl font-bold text-red-500 mb-8 flex items-center">
+                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                </svg>
+                Bandes-Annonces Films
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300">
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/mdZQ-_GLzYs?si=O1KorgycUlvXQCWH" 
+                                title="Death Note 2006 Trailer" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-yellow-600 text-white text-xs font-semibold rounded-full mb-3">FILM 2006</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Death Note (2006) - Bande-Annonce Officielle</h3>
+                        <p class="text-gray-400">Bande-annonce du premier film live-action Death Note réalisé par Shusuke Kaneko.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300">
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/gvxNaSIB_WI?si=kc4b12ASZc_8oDns"
+                                title="Death Note Netflix 2017" 
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-semibold rounded-full mb-3">NETFLIX 2017</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Death Note Netflix (2017) - Teaser</h3>
+                        <p class="text-gray-400">Teaser officiel du film Death Note produit par Netflix.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scènes Cultes -->
+        <section class="mb-16 fade-in-up" style="animation-delay: 0.2s;">
+            <h2 class="text-3xl font-bold text-red-500 mb-8 flex items-center">
+                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
+                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
+                </svg>
+                Scènes Cultes
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300">
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/uf-vZ44LXHs?si=5enbtiuX_dDN5emw" 
+                                title="Potato Chip Scene" 
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full mb-3">⭐ ICONIQUE</span>
+                        <h3 class="text-xl font-bold text-white mb-2">La Scène Mythique des Chips</h3>
+                        <p class="text-gray-400">L'une des scènes les plus mémorables de l'anime.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300">
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/_1rlpBvR3oY?si=bpV9ZhCVkpf4H6Mx" 
+                                title="Light meets Ryuk" 
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-orange-600 text-white text-xs font-semibold rounded-full mb-3">🇫🇷 VF</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Première Rencontre Light et Ryuk</h3>
+                        <p class="text-gray-400">Moment emblématique de la rencontre entre Light et le Shinigami.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300">
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/2RJAvHvOL3w"
+                                title="Death Note Scene" 
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full mb-3">📺 ANIME</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Extraits de l'Anime</h3>
+                        <p class="text-gray-400">Compilation de moments marquants de la série.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Musiques & Openings -->
+        <section class="mb-16 fade-in-up" style="animation-delay: 0.3s;">
+            <h2 class="text-3xl font-bold text-red-500 mb-8 flex items-center">
+                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M18 3a1 1 0 00-1.196-.98l-10 2A1 1 0 006 5v9.114A4.369 4.369 0 005 14c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V7.82l8-1.6v5.894A4.37 4.37 0 0015 12c-1.657 0-3 .895-3 2s1.343 2 3 2 3-.895 3-2V3z"/>
+                </svg>
+                Musiques et Openings
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300">
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/8QE9cmfxx4s"
+                                title="Death Note Opening 1" 
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-pink-600 text-white text-xs font-semibold rounded-full mb-3">🎵 OP 1</span>
+                        <h3 class="text-xl font-bold text-white mb-2">Opening 1 - "The WORLD"</h3>
+                        <p class="text-gray-400">Opening officiel de l'anime Death Note par Nightmare.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300">
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/qR6dzwQahOM?si=H6s8Kx2J_WQbil3M" 
+                                title="Light's Theme" 
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-indigo-600 text-white text-xs font-semibold rounded-full mb-3">🎼 OST</span>
+                        <h3 class="text-xl font-bold text-white mb-2">OST - "Light's Theme"</h3>
+                        <p class="text-gray-400">Thème musical de Light Yagami par Yoshihisa Hirano.</p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300">
+                    <div class="video-responsive">
+                        <iframe src="https://www.youtube.com/embed/oG7EaSELOiM?si=UoDz6trbYxWQz8O0"
+                                title="The WORLD Full" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="p-6">
+                        <span class="inline-block px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full mb-3">🎸 FULL</span>
+                        <h3 class="text-xl font-bold text-white mb-2">The WORLD - Version Complète</h3>
+                        <p class="text-gray-400">Version complète du premier opening par Nightmare.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ressources YouTube -->
+        <section class="bg-gradient-to-br from-death-red to-red-900 p-8 rounded-2xl shadow-xl mb-16 fade-in-up" style="animation-delay: 0.4s;">
+            <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
+                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                </svg>
+                Chaînes YouTube Recommandées
+            </h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <a href="https://youtube.com/@deathnote" target="_blank" class="bg-white bg-opacity-20 hover:bg-opacity-30 p-4 rounded-lg transition-all duration-300 text-white font-semibold flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    Chaîne Officielle
+                </a>
+                <a href="https://youtube.com/results?search_query=death+note+analysis" target="_blank" class="bg-white bg-opacity-20 hover:bg-opacity-30 p-4 rounded-lg transition-all duration-300 text-white font-semibold flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    Analyses
+                </a>
+                <a href="https://youtube.com/results?search_query=death+note+ost" target="_blank" class="bg-white bg-opacity-20 hover:bg-opacity-30 p-4 rounded-lg transition-all duration-300 text-white font-semibold flex items-center justify-center">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    OST Complets
+                </a>
+            </div>
+        </section>
+
+        <!-- Note -->
+        <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-800 fade-in-up" style="animation-delay: 0.5s;">
+            <div class="flex items-start">
+                <svg class="w-6 h-6 text-yellow-500 mr-3 flex-shrink-0 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-2">Note Importante sur les Droits d'Auteur</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        Toutes les vidéos présentées sur cette page sont hébergées sur YouTube et appartiennent à leurs créateurs respectifs. 
+                        Death Note © Tsugumi Ohba & Takeshi Obata. Ce site est un projet de fans non commercial créé par passion pour l'œuvre.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-black border-t-2 border-death-red mt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4">Navigation</h3>
+                    <nav>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="index.html" class="hover:text-red-500 transition-colors">› Accueil</a></li>
+                            <li><a href="actualites.html" class="hover:text-red-500 transition-colors">› Actualités</a></li>
+                            <li><a href="realisations.html" class="hover:text-red-500 transition-colors">› Réalisations</a></li>
+                            <li><a href="evenements.html" class="hover:text-red-500 transition-colors">› Événements</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4">À propos</h3>
+                    <p class="text-gray-400 leading-relaxed">Site de fans dédié à l'univers Death Note.</p>
+                </div>
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="galerie.html" class="hover:text-red-500 transition-colors">› Galerie</a></li>
+                        <li><a href="videos.html" class="hover:text-red-500 transition-colors">› Vidéos</a></li>
+                        <li><a href="contact.html" class="hover:text-red-500 transition-colors">› Nous contacter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center">
+                <p class="text-gray-500">&copy; 2024 Death Note Fan Site. Death Note © Tsugumi Ohba & Takeshi Obata.</p>
             </div>
         </div>
     </footer>
+
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-death-red text-white p-4 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-red-700 hover:scale-110 z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script src="Assets/Js/script.js"></script>
 </body>
 
 </html>

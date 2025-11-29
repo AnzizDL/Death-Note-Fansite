@@ -1,94 +1,302 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Death Note - Fan Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'death-red': '#8b0000',
+                        'death-dark': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="Assets/Css/style.css">
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse-red {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(139, 0, 0, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 20px 10px rgba(139, 0, 0, 0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .animate-pulse-red {
+            animation: pulse-red 2s infinite;
+        }
+    </style>
 </head>
 
-<body>
-    <header>
-        <h1>Death Note</h1>
-        <nav>
-            <ul>
-                <img src ="Assets/Images/Logo_pomme_death_note.png" div class="logo-pomme">
-                <li><a href="index.html" class="active">Accueil</a></li>
-                <li><a href="actualites.html">Actualités</a></li>
-                <li><a href="realisations.html">Réalisations</a></li>
-                <li><a href="evenements.html">Événements</a></li>
-                <li><a href="galerie.html">Galerie</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-100 min-h-screen"
+    style="background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('Assets/Images/Death note wallpaper.jpep.jpg'); background-size: cover; background-attachment: fixed;"
+>
+    <!-- Header moderne avec Tailwind -->
+    <header class="bg-black border-b-2 border-death-red shadow-lg sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="Assets/Images/Logo_pomme_death_note.png" alt="Death Note Logo" 
+                         class="w-12 h-12 animate-pulse-red transition-transform hover:scale-110 duration-300">
+                    <h1 class="text-2xl md:text-3xl font-bold text-white tracking-wider hidden md:block">DEATH NOTE</h1>
+                </div>
+                
+                <!-- Menu burger mobile -->
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                
+                <!-- Navigation desktop -->
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-1">
+                        <li><a href="index.html" class="nav-link active px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white hover:transform hover:-translate-y-0.5">Accueil</a></li>
+                        <li><a href="actualites.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white hover:transform hover:-translate-y-0.5">Actualités</a></li>
+                        <li><a href="realisations.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white hover:transform hover:-translate-y-0.5">Réalisations</a></li>
+                        <li><a href="evenements.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white hover:transform hover:-translate-y-0.5">Événements</a></li>
+                        <li><a href="galerie.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white hover:transform hover:-translate-y-0.5">Galerie</a></li>
+                        <li><a href="videos.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white hover:transform hover:-translate-y-0.5">Vidéos</a></li>
+                        <li><a href="contact.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white hover:transform hover:-translate-y-0.5">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <!-- Menu mobile -->
+            <nav id="mobile-menu" class="hidden md:hidden pb-4">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="index.html" class="block px-4 py-2 rounded-lg bg-death-red text-white font-semibold uppercase text-sm">Accueil</a></li>
+                    <li><a href="actualites.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Actualités</a></li>
+                    <li><a href="realisations.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Réalisations</a></li>
+                    <li><a href="evenements.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Événements</a></li>
+                    <li><a href="galerie.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Galerie</a></li>
+                    <li><a href="videos.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Vidéos</a></li>
+                    <li><a href="contact.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero-section">
-            <h1>Bienvenue sur le fansite de Death Note</h1>
-            <img src="Assets/Images/Acceuil_Death_Note.webp" alt="Death Note Accueil" class="image-acceuil">
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        <!-- Hero Section moderne -->
+        <section class="hero-section mb-16">
+            <div class="text-center mb-8 fade-in-up">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-lg">
+                    Bienvenue sur le fansite de <span class="text-red-600">Death Note</span>
+                </h1>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Plongez dans l'univers sombre et captivant du manga culte
+                </p>
+            </div>
+            
+            <div class="relative group overflow-hidden rounded-2xl shadow-2xl fade-in-up" style="animation-delay: 0.2s;">
+                <img src="Assets/Images/Acceuil_Death_Note.webp" 
+                     alt="Death Note Accueil" 
+                     class="w-full max-w-4xl mx-auto transform transition-all duration-500 group-hover:scale-110 rounded-2xl">
+                <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-0 group-hover:opacity-70 transition-opacity duration-500 rounded-2xl"></div>
+            </div>
         </section>
 
-        <article class="main-content">
-            <h2>L'Univers Fascinant de Death Note</h2>
-            <p>Ce site est dédié à l'univers de Death Note, un manga captivant qui explore les thèmes de la justice, du
-                pouvoir et de la moralité. Vous y trouverez des informations sur les personnages, les intrigues, ainsi
-                que des analyses et des discussions sur les différents arcs narratifs.
-                Que vous soyez un fan de longue date ou que vous découvriez Death Note pour la première fois, nous
-                espérons que vous apprécierez votre visite sur notre site. N'hésitez pas à explorer les différentes sections pour
-                en apprendre davantage sur cet univers fascinant.</p>
-        </article>
+        <!-- Grid Layout pour le contenu -->
+        <div class="grid lg:grid-cols-3 gap-8 mb-12">
+            <!-- Contenu principal (2/3) -->
+            <article class="lg:col-span-2 bg-gray-900 bg-opacity-60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-800 hover:border-death-red transition-colors duration-300 fade-in-up" style="animation-delay: 0.3s;">
+                <h2 class="text-3xl font-bold text-red-500 mb-6 flex items-center">
+                    <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+                    </svg>
+                    L'Univers Fascinant de Death Note
+                </h2>
+                <div class="text-gray-300 leading-relaxed space-y-4">
+                    <p class="text-lg">
+                        Ce site est dédié à l'univers de <span class="text-red-400 font-semibold">Death Note</span>, un manga captivant qui explore les thèmes de la justice, du pouvoir et de la moralité.
+                    </p>
+                    <p>
+                        Vous y trouverez des informations sur les personnages, les intrigues, ainsi que des analyses et des discussions sur les différents arcs narratifs.
+                    </p>
+                    <p>
+                        Que vous soyez un fan de longue date ou que vous découvriez Death Note pour la première fois, nous espérons que vous apprécierez votre visite sur notre site. N'hésitez pas à explorer les différentes sections pour en apprendre davantage sur cet univers fascinant.
+                    </p>
+                </div>
+            </article>
 
-        <aside class="featured-content">
-            <h2>Navigation Rapide</h2>
-            <p><strong>Vidéos</strong> : Extraits anime et analyses</p>
-            <p><strong>Galerie</strong> : Images officielles et captures d'écran</p>
-            <p><strong>Événements</strong> : Dates importantes de la série</p>
-            <p><strong>Réalisations</strong> : Adaptations et créations</p>
-        </aside>
+            <!-- Sidebar (1/3) -->
+            <aside class="space-y-6 fade-in-up" style="animation-delay: 0.4s;">
+                <!-- Navigation Rapide -->
+                <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-800 hover:border-death-red transition-colors duration-300">
+                    <h2 class="text-2xl font-bold text-red-500 mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                        </svg>
+                        Navigation Rapide
+                    </h2>
+                    <div class="space-y-3">
+                        <a href="videos.html" class="block p-3 bg-gray-800 rounded-lg hover:bg-death-red hover:transform hover:translate-x-2 transition-all duration-300">
+                            <p class="font-semibold text-white">🎬 Vidéos</p>
+                            <p class="text-sm text-gray-400">Extraits anime et analyses</p>
+                        </a>
+                        <a href="galerie.html" class="block p-3 bg-gray-800 rounded-lg hover:bg-death-red hover:transform hover:translate-x-2 transition-all duration-300">
+                            <p class="font-semibold text-white">🖼️ Galerie</p>
+                            <p class="text-sm text-gray-400">Images officielles et captures</p>
+                        </a>
+                        <a href="evenements.html" class="block p-3 bg-gray-800 rounded-lg hover:bg-death-red hover:transform hover:translate-x-2 transition-all duration-300">
+                            <p class="font-semibold text-white">📅 Événements</p>
+                            <p class="text-sm text-gray-400">Dates importantes de la série</p>
+                        </a>
+                        <a href="realisations.html" class="block p-3 bg-gray-800 rounded-lg hover:bg-death-red hover:transform hover:translate-x-2 transition-all duration-300">
+                            <p class="font-semibold text-white">🎭 Réalisations</p>
+                            <p class="text-sm text-gray-400">Adaptations et créations</p>
+                        </a>
+                    </div>
+                </div>
 
-        <section class="news-section">
-            <h2>Actualités</h2>
-            <article class="news-item">
-                <h3>Nouveau contenu ajouté !</h3>
-                <p class="news-date">19 septembre 2025</p>
-                <p>Découvrez notre nouvelle galerie photos et notre section vidéos avec des extraits exclusifs !</p>
+                <!-- Citation inspirante -->
+                <div class="bg-gradient-to-br from-death-red to-red-900 p-6 rounded-2xl shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <svg class="w-8 h-8 text-white mb-3" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                    </svg>
+                    <p class="text-white font-semibold italic text-lg leading-relaxed">
+                        "Je crée un nouveau monde, un monde débarrassé du mal et peuplé d'honnêtes gens."
+                    </p>
+                    <p class="text-red-200 text-right mt-2">— Light Yagami</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Section Actualités -->
+        <section class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-800 fade-in-up" style="animation-delay: 0.5s;">
+            <h2 class="text-3xl font-bold text-red-500 mb-6 flex items-center">
+                <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z" clip-rule="evenodd"/>
+                    <path d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"/>
+                </svg>
+                Actualités
+            </h2>
+            <article class="bg-gray-800 p-6 rounded-xl border-l-4 border-death-red hover:bg-gray-750 transition-colors duration-300">
+                <h3 class="text-2xl font-bold text-white mb-2">Nouveau contenu ajouté !</h3>
+                <p class="text-red-400 text-sm mb-4 flex items-center">
+                    <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                    </svg>
+                    19 septembre 2025
+                </p>
+                <p class="text-gray-300 leading-relaxed">
+                    Découvrez notre nouvelle galerie photos et notre section vidéos avec des extraits exclusifs ! Le site a été entièrement rénové avec un design moderne et des fonctionnalités interactives.
+                </p>
             </article>
         </section>
     </main>
 
-    <footer>
-        <div class="footer-content">
-            <!-- Navigation du footer -->
-            <div class="footer-section footer-nav">
-                <h3>Navigation rapide</h3>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="actualites.html">Actualités</a></li>
-                        <li><a href="realisations.html">Réalisations</a></li>
-                        <li><a href="evenements.html">Événements</a></li>
-                        <li><a href="galerie.html">Galerie</a></li>
-                        <li><a href="videos.html">Vidéos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+    <!-- Footer moderne -->
+    <footer class="bg-black border-t-2 border-death-red mt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- Navigation -->
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                        Navigation
+                    </h3>
+                    <nav>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="index.html" class="hover:text-red-500 transition-colors duration-300 flex items-center">
+                                <span class="mr-2">›</span> Accueil
+                            </a></li>
+                            <li><a href="actualites.html" class="hover:text-red-500 transition-colors duration-300 flex items-center">
+                                <span class="mr-2">›</span> Actualités
+                            </a></li>
+                            <li><a href="realisations.html" class="hover:text-red-500 transition-colors duration-300 flex items-center">
+                                <span class="mr-2">›</span> Réalisations
+                            </a></li>
+                            <li><a href="evenements.html" class="hover:text-red-500 transition-colors duration-300 flex items-center">
+                                <span class="mr-2">›</span> Événements
+                            </a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- À propos -->
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        À propos
+                    </h3>
+                    <p class="text-gray-400 leading-relaxed">
+                        Site de fans dédié à l'univers Death Note, créé avec passion pour partager notre amour de cette œuvre culte.
+                    </p>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                        </svg>
+                        Contact
+                    </h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="galerie.html" class="hover:text-red-500 transition-colors duration-300 flex items-center">
+                            <span class="mr-2">›</span> Galerie
+                        </a></li>
+                        <li><a href="videos.html" class="hover:text-red-500 transition-colors duration-300 flex items-center">
+                            <span class="mr-2">›</span> Vidéos
+                        </a></li>
+                        <li><a href="contact.html" class="hover:text-red-500 transition-colors duration-300 flex items-center">
+                            <span class="mr-2">›</span> Nous contacter
+                        </a></li>
                     </ul>
-                </nav>
+                </div>
             </div>
 
-            <!-- Informations légales et copyright -->
-            <div class="footer-section footer-info">
-                <p>&copy; 2024 Death Note Fan Site. Site de fans créé par passion.</p>
-                <p>Death Note © Tsugumi Ohba & Takeshi Obata. Tous droits réservés aux ayants droit.</p>
-                <p>
-                    <a href="#contact">Contact</a> |
-                    <a href="#mentions-legales">Mentions légales</a> |
-                    <a href="#privacy">Confidentialité</a>
-                </p>
+            <!-- Copyright -->
+            <div class="border-t border-gray-800 pt-6 text-center">
+                <p class="text-gray-500 mb-2">&copy; 2024 Death Note Fan Site. Site de fans créé par passion.</p>
+                <p class="text-gray-600 text-sm">Death Note © Tsugumi Ohba & Takeshi Obata. Tous droits réservés aux ayants droit.</p>
+                <div class="mt-4 flex justify-center space-x-6 text-sm">
+                    <a href="contact.html" class="text-gray-500 hover:text-red-500 transition-colors duration-300">Contact</a>
+                    <span class="text-gray-700">|</span>
+                    <a href="#mentions-legales" class="text-gray-500 hover:text-red-500 transition-colors duration-300">Mentions légales</a>
+                    <span class="text-gray-700">|</span>
+                    <a href="#privacy" class="text-gray-500 hover:text-red-500 transition-colors duration-300">Confidentialité</a>
+                </div>
             </div>
         </div>
     </footer>
+
+    <!-- Bouton retour en haut -->
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-death-red text-white p-4 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-red-700 hover:scale-110 z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script src="Assets/Js/script.js"></script>
 </body>
 
 </html>

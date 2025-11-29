@@ -1,133 +1,247 @@
 ﻿<!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galerie - Death Note</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'death-red': '#8b0000',
+                        'death-dark': '#1a1a1a',
+                    }
+                }
+            }
+        }
+    </script>
     <link rel="stylesheet" href="Assets/Css/style.css">
+    <style>
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+        .gallery-img { cursor: pointer; transition: transform 0.3s ease; }
+        .gallery-img:hover { transform: scale(1.05); }
+    </style>
 </head>
 
-<body>
-    <header>
-        <h1>Death Note</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="actualites.html">Actualités</a></li>
-                <li><a href="realisations.html">Réalisations</a></li>
-                <li><a href="evenements.html">Événements</a></li>
-                <li><a href="galerie.html" class="active">Galerie</a></li>
-                <li><a href="videos.html">Videos</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-100 min-h-screen" style="background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('Assets/Images/Death note wallpaper.jpep.jpg'); background-size: cover; background-attachment: fixed;">
 
-    <main>
-        <h1>Galerie Photos</h1>
-        <p>Découvrez une sélection d'images officielles de l'univers Death Note, incluant des planches du manga,
-            captures d'écran de l'anime, et photos des adaptations live-action.</p>
-        <section class="gallery-section">
-            <h2>Planches Manga</h2>
-            <div class="photo-grid">
-                <div class="photo-placeholder">
-                    <div class="placeholder-content">
-                        <img src="Assets/Images/Light_decouvre_le_cahier.png" alt = "planche manga" class="gallery-img">
-                        <p>Planche manga<br>Light découvre le Death Note</p>
-                    </div>
+    <!-- Header identique -->
+    <header class="bg-black border-b-2 border-death-red shadow-lg sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center space-x-3">
+                    <img src="Assets/Images/Logo_pomme_death_note.png" alt="Death Note Logo" class="w-12 h-12 transition-transform hover:scale-110 duration-300">
+                    <h1 class="text-2xl md:text-3xl font-bold text-white tracking-wider hidden md:block">DEATH NOTE</h1>
                 </div>
-
-                <div class="photo-placeholder">
-                    <div class="placeholder-content">
-                        <img src="Assets/Images/RencontreL.jpg" class="gallery-img">
-                        <p>Premiere rencontre entre Light et L</p>
-                    </div>
-                </div>
-
-                <div class="photo-placeholder">
-                    <div class="placeholder-content">
-                        <img src="Assets/Images/Light_rencontre_ryuk.png" alt="Planche manga : Ryuk explique les règles" class="gallery-img">
-                        <p>Planche manga<br>Ryuk explique les règles</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="gallery-section">
-            <h2>Captures d'Écran Anime</h2>
-            <div class="photo-grid">
-                <div class="photo-placeholder">
-                    <div class="placeholder-content">
-                        <img src="Assets/Images/Light_write.gif">
-                        <p>Light écrit dans le carnet</p>
-                    </div>
-                </div>
-
-                <div class="photo-placeholder">
-                    <div class="placeholder-content">
-                        <img src="Assets/Images/L_and_Light.gif" alt="Light rencontre L" class="gallery-img">
-                        <p>Screenshot anime<br>Light rencontre L</p>
-                    </div>
-                </div>
-
-                <div class="photo-placeholder">
-                    <div class="placeholder-content">
-                        <img src ="Assets/Images/L_etLight.jpg" alt="Misa en tenue gothique" class="gallery-img">
-                        <p>Screenshot anime<br>Misa en tenue gothique</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="gallery-section">
-            <h2>Photos Films Live-Action</h2>
-            <div class="photo-grid">
-                <div class="photo-placeholder">
-                    <div class="placeholder-content">
-                        <img src="Assets/Images/Screen_film_death_note_2006.jpg" alt="Film Death Note 2006"
-                            class="images-films">
-                        <p>Film 2006<br>Tatsuya Fujiwara (Light)</p>
-                    </div>
-                </div>
-                <div class="photo-placeholder">
-                    <div class="placeholder-content">
-                        <img src="Assets/Images/death_note_drama.jpg" alt ="film drama death note" class ="images-films">
-                        <p>Drama 2015<br>Kenichi Matsuyama (L)</p>
-                    </div>
-                </div>
-
-                <div class="photo-placeholder">
-                    <div class="placeholder-content">
-                        <img src="Assets/Images/Netflix_Death_Note.jpg" alt="Film Death Note Netflix 2017"
-                            class="images-films">
-                        <p>Film Netflix 2017<br>Nat Wolff (Light Turner)</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <!-- Navigation du footer -->
-            <div class="footer-section footer-nav">
-                <h3>Navigation rapide</h3>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="realisations.html">Réalisations</a></li>
-                        <li><a href="evenements.html">Événements</a></li>
-                        <li><a href="galerie.html">Galerie</a></li>
-                        <li><a href="videos.html">Vidéos</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                
+                <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="close-icon" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+                
+                <nav class="hidden md:block">
+                    <ul class="flex space-x-1">
+                        <li><a href="index.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Accueil</a></li>
+                        <li><a href="actualites.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Actualités</a></li>
+                        <li><a href="realisations.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Réalisations</a></li>
+                        <li><a href="evenements.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Événements</a></li>
+                        <li><a href="galerie.html" class="active nav-link px-4 py-2 rounded-lg bg-death-red text-white font-semibold uppercase text-sm tracking-wide">Galerie</a></li>
+                        <li><a href="videos.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Vidéos</a></li>
+                        <li><a href="contact.html" class="nav-link px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white">Contact</a></li>
                     </ul>
                 </nav>
             </div>
-                </p>
+            
+            <nav id="mobile-menu" class="hidden md:hidden pb-4">
+                <ul class="flex flex-col space-y-2">
+                    <li><a href="index.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Accueil</a></li>
+                    <li><a href="actualites.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Actualités</a></li>
+                    <li><a href="realisations.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Réalisations</a></li>
+                    <li><a href="evenements.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Événements</a></li>
+                    <li><a href="galerie.html" class="block px-4 py-2 rounded-lg bg-death-red text-white font-semibold uppercase text-sm">Galerie</a></li>
+                    <li><a href="videos.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Vidéos</a></li>
+                    <li><a href="contact.html" class="block px-4 py-2 rounded-lg hover:bg-gray-800 text-gray-300 font-semibold uppercase text-sm transition">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-7xl">
+        <div class="text-center mb-12 fade-in-up">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 tracking-wider drop-shadow-lg flex items-center justify-center">
+                <svg class="w-10 h-10 mr-3 text-red-500" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clip-rule="evenodd"/>
+                </svg>
+                Galerie Photos
+            </h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                Découvrez une sélection d'images officielles de l'univers Death Note, incluant des planches du manga, captures d'écran de l'anime, et photos des adaptations live-action. <span class="text-red-400">Cliquez sur une image pour l'agrandir</span>.
+            </p>
+        </div>
+
+        <!-- Filtres -->
+        <div class="flex justify-center gap-4 mb-12 flex-wrap fade-in-up" style="animation-delay: 0.1s;">
+            <button class="filter-btn active bg-death-red px-6 py-3 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:scale-105" data-filter="all">Tout</button>
+            <button class="filter-btn bg-gray-800 px-6 py-3 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:scale-105" data-filter="manga">Manga</button>
+            <button class="filter-btn bg-gray-800 px-6 py-3 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:scale-105" data-filter="anime">Anime</button>
+            <button class="filter-btn bg-gray-800 px-6 py-3 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:scale-105" data-filter="film">Films</button>
+        </div>
+        <!-- Galerie en Grid avec Tailwind -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Manga -->
+            <div class="gallery-item bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 hover:transform hover:scale-105 fade-in-up" data-category="manga" style="animation-delay: 0.1s;">
+                <div class="relative group">
+                    <img src="Assets/Images/Light_decouvre_le_cahier.png" alt="Light découvre le Death Note" class="gallery-img w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-4">
+                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-semibold rounded-full mb-2">MANGA</span>
+                    <p class="text-gray-300 font-semibold">Light découvre le Death Note</p>
+                </div>
+            </div>
+
+            <div class="gallery-item bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 hover:transform hover:scale-105 fade-in-up" data-category="manga" style="animation-delay: 0.15s;">
+                <div class="relative group">
+                    <img src="Assets/Images/RencontreL.jpg" alt="Première rencontre entre Light et L" class="gallery-img w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-4">
+                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-semibold rounded-full mb-2">MANGA</span>
+                    <p class="text-gray-300 font-semibold">Première rencontre entre Light et L</p>
+                </div>
+            </div>
+
+            <div class="gallery-item bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 hover:transform hover:scale-105 fade-in-up" data-category="manga" style="animation-delay: 0.2s;">
+                <div class="relative group">
+                    <img src="Assets/Images/Light_rencontre_ryuk.png" alt="Ryuk explique les règles" class="gallery-img w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-4">
+                    <span class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-semibold rounded-full mb-2">MANGA</span>
+                    <p class="text-gray-300 font-semibold">Ryuk explique les règles</p>
+                </div>
+            </div>
+
+            <!-- Anime -->
+            <div class="gallery-item bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 hover:transform hover:scale-105 fade-in-up" data-category="anime" style="animation-delay: 0.25s;">
+                <div class="relative group">
+                    <img src="Assets/Images/Light_write.gif" alt="Light écrit dans le carnet" class="gallery-img w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-4">
+                    <span class="inline-block px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full mb-2">ANIME</span>
+                    <p class="text-gray-300 font-semibold">Light écrit dans le carnet</p>
+                </div>
+            </div>
+
+            <div class="gallery-item bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 hover:transform hover:scale-105 fade-in-up" data-category="anime" style="animation-delay: 0.3s;">
+                <div class="relative group">
+                    <img src="Assets/Images/L_and_Light.gif" alt="Light rencontre L" class="gallery-img w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-4">
+                    <span class="inline-block px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full mb-2">ANIME</span>
+                    <p class="text-gray-300 font-semibold">Light rencontre L</p>
+                </div>
+            </div>
+
+            <div class="gallery-item bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 hover:transform hover:scale-105 fade-in-up" data-category="anime" style="animation-delay: 0.35s;">
+                <div class="relative group">
+                    <img src="Assets/Images/L_etLight.jpg" alt="L et Light" class="gallery-img w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-4">
+                    <span class="inline-block px-3 py-1 bg-purple-600 text-white text-xs font-semibold rounded-full mb-2">ANIME</span>
+                    <p class="text-gray-300 font-semibold">L et Light</p>
+                </div>
+            </div>
+
+            <!-- Films -->
+            <div class="gallery-item bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 hover:transform hover:scale-105 fade-in-up" data-category="film" style="animation-delay: 0.4s;">
+                <div class="relative group">
+                    <img src="Assets/Images/Screen_film_death_note_2006.jpg" alt="Film Death Note 2006" class="gallery-img w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-4">
+                    <span class="inline-block px-3 py-1 bg-yellow-600 text-white text-xs font-semibold rounded-full mb-2">FILM</span>
+                    <p class="text-gray-300 font-semibold">Film 2006 - Tatsuya Fujiwara (Light)</p>
+                </div>
+            </div>
+
+            <div class="gallery-item bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 hover:transform hover:scale-105 fade-in-up" data-category="film" style="animation-delay: 0.45s;">
+                <div class="relative group">
+                    <img src="Assets/Images/death_note_drama.jpg" alt="Drama Death Note" class="gallery-img w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-4">
+                    <span class="inline-block px-3 py-1 bg-yellow-600 text-white text-xs font-semibold rounded-full mb-2">FILM</span>
+                    <p class="text-gray-300 font-semibold">Drama 2015 - Kenichi Matsuyama (L)</p>
+                </div>
+            </div>
+
+            <div class="gallery-item bg-gray-900 bg-opacity-60 backdrop-blur-sm rounded-2xl overflow-hidden shadow-xl border border-gray-800 hover:border-death-red transition-all duration-300 hover:transform hover:scale-105 fade-in-up" data-category="film" style="animation-delay: 0.5s;">
+                <div class="relative group">
+                    <img src="Assets/Images/Netflix_Death_Note.jpg" alt="Film Death Note Netflix 2017" class="gallery-img w-full h-64 object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                <div class="p-4">
+                    <span class="inline-block px-3 py-1 bg-yellow-600 text-white text-xs font-semibold rounded-full mb-2">FILM</span>
+                    <p class="text-gray-300 font-semibold">Film Netflix 2017 - Nat Wolff (Light Turner)</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t-2 border-death-red mt-16">
+        <div class="container mx-auto px-4 py-12">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4">Navigation</h3>
+                    <nav>
+                        <ul class="space-y-2 text-gray-400">
+                            <li><a href="index.html" class="hover:text-red-500 transition-colors">› Accueil</a></li>
+                            <li><a href="actualites.html" class="hover:text-red-500 transition-colors">› Actualités</a></li>
+                            <li><a href="realisations.html" class="hover:text-red-500 transition-colors">› Réalisations</a></li>
+                            <li><a href="evenements.html" class="hover:text-red-500 transition-colors">› Événements</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4">À propos</h3>
+                    <p class="text-gray-400 leading-relaxed">Site de fans dédié à l'univers Death Note.</p>
+                </div>
+                <div>
+                    <h3 class="text-red-500 font-bold text-xl mb-4">Contact</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="galerie.html" class="hover:text-red-500 transition-colors">› Galerie</a></li>
+                        <li><a href="videos.html" class="hover:text-red-500 transition-colors">› Vidéos</a></li>
+                        <li><a href="contact.html" class="hover:text-red-500 transition-colors">› Nous contacter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center">
+                <p class="text-gray-500">&copy; 2024 Death Note Fan Site. Death Note © Tsugumi Ohba & Takeshi Obata.</p>
             </div>
         </div>
     </footer>
+
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-death-red text-white p-4 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-red-700 hover:scale-110 z-50">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+        </svg>
+    </button>
+
+    <script src="Assets/Js/script.js"></script>
 </body>
 
 </html>
