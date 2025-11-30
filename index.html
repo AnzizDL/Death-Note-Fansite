@@ -1,12 +1,22 @@
 <!DOCTYPE html>
+<!--
+    Fichier: index.html
+    Page d'accueil du fansite Death Note.
+    Objectif: Présenter le héros, une intro, navigation rapide et actualités.
+    Remarque: Tailwind est encore chargé pour certaines classes utilitaires à retirer plus tard.
+-->
 <html lang="fr" class="scroll-smooth">
 
 <head>
+    <!-- Métadonnées de base + responsive -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Death Note - Fan Site (coucou Nayel)</title>
+    <!-- Titre de la page -->
+    <title>Death Note - Fan Site</title>
+    <!-- CDN Tailwind (à supprimer quand migration CSS custom terminée) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
+        // Configuration Tailwind addition de couleurs personnalisées (death-red, death-dark)
         tailwind.config = {
             theme: {
                 extend: {
@@ -18,7 +28,9 @@
             }
         }
     </script>
+    <!-- Feuille de style principale custom -->
     <link rel="stylesheet" href="Assets/Css/style.css">
+    <!-- Animations legacy (seront déplacées entièrement dans style.css) -->
     <style>
         @keyframes fadeInUp {
             from {
@@ -50,7 +62,8 @@
 <body class="bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-100 min-h-screen"
     style="background-image: linear-gradient(rgba(26, 26, 26, 0.85), rgba(26, 26, 26, 0.85)), url('Assets/Images/Death note wallpaper.jpep.jpg'); background-size: cover; background-attachment: fixed;"
 >
-    <!-- Header moderne avec Tailwind -->
+    <!-- ================= HEADER ================= -->
+    <!-- Barre supérieure contenant logo, titre et navigation (desktop + mobile) -->
     <header class="bg-black border-b-2 border-death-red shadow-lg sticky top-0 z-50 backdrop-blur-sm bg-opacity-95">
         <div class="container mx-auto px-4">
             <div class="flex items-center justify-between py-4">
@@ -62,6 +75,7 @@
                 </div>
                 
                 <!-- Menu burger mobile -->
+                <!-- Bouton toggle du menu mobile, visible uniquement en dessous du breakpoint md -->
                 <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -70,6 +84,7 @@
                 </button>
                 
                 <!-- Navigation desktop -->
+                <!-- Liste des liens principaux du site affichés en mode bureau -->
                 <nav class="hidden md:block">
                     <ul class="flex space-x-1">
                         <li><a href="index.html" class="nav-link active px-4 py-2 rounded-lg font-semibold uppercase text-sm tracking-wide transition-all duration-300 hover:bg-death-red hover:text-white hover:transform hover:-translate-y-0.5">Accueil</a></li>
@@ -84,6 +99,7 @@
             </div>
             
             <!-- Menu mobile -->
+            <!-- Liste des liens adaptative affichée quand le burger est activé -->
             <nav id="mobile-menu" class="hidden md:hidden pb-4">
                 <ul class="flex flex-col space-y-2">
                     <li><a href="index.html" class="block px-4 py-2 rounded-lg bg-death-red text-white font-semibold uppercase text-sm">Accueil</a></li>
@@ -98,18 +114,20 @@
         </div>
     </header>
 
+    <!-- ================= MAIN ================= -->
     <main class="container mx-auto px-4 py-8 max-w-7xl">
-        <!-- Hero Section moderne -->
+        <!-- Section Hero: titre d'accueil + image illustrative -->
         <section class="hero-section mb-16">
             <div class="text-center mb-8 fade-in-up">
                 <h1 class="text-4xl md:text-6xl font-bold text-white mb-4 tracking-wider drop-shadow-lg">
-                    (coucou Nayel) Bienvenue sur le fansite de <span class="text-red-600">Death Note</span>
+                Bienvenue sur le fansite de <span class="text-red-600">Death Note</span>
                 </h1>
                 <p class="text-xl text-gray-300 max-w-3xl mx-auto">
                     Plongez dans l'univers sombre et captivant du manga culte
                 </p>
             </div>
             
+            <!-- Image d'accueil avec effets hover (à simplifier si besoin responsive) -->
             <div class="relative group overflow-hidden rounded-2xl shadow-2xl fade-in-up" style="animation-delay: 0.2s;">
                 <img src="Assets/Images/Acceuil_Death_Note.webp" 
                      alt="Death Note Accueil" 
@@ -119,6 +137,7 @@
         </section>
 
         <!-- Grid Layout pour le contenu -->
+        <!-- Grille principale: article de présentation + navigation rapide + citation -->
         <div class="grid lg:grid-cols-3 gap-8 mb-12">
             <!-- Contenu principal (2/3) -->
             <article class="lg:col-span-2 bg-gray-900 bg-opacity-60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-800 hover:border-death-red transition-colors duration-300 fade-in-up" style="animation-delay: 0.3s;">
@@ -142,6 +161,7 @@
             </article>
 
             <!-- Sidebar (1/3) -->
+            <!-- Aside: Liens rapides + citation inspirante -->
             <aside class="space-y-6 fade-in-up" style="animation-delay: 0.4s;">
                 <!-- Navigation Rapide -->
                 <div class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-6 rounded-2xl shadow-xl border border-gray-800 hover:border-death-red transition-colors duration-300">
@@ -185,6 +205,7 @@
         </div>
 
         <!-- Section Actualités -->
+        <!-- Section des actualités récentes du site -->
         <section class="bg-gray-900 bg-opacity-60 backdrop-blur-sm p-8 rounded-2xl shadow-xl border border-gray-800 fade-in-up" style="animation-delay: 0.5s;">
             <h2 class="text-3xl font-bold text-red-500 mb-6 flex items-center">
                 <svg class="w-8 h-8 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -208,11 +229,13 @@
         </section>
     </main>
 
-    <!-- Footer moderne -->
+    <!-- ================= FOOTER ================= -->
+    <!-- Pied de page avec navigation secondaire, infos et liens légaux -->
     <footer class="bg-black border-t-2 border-death-red mt-16">
         <div class="container mx-auto px-4 py-12">
             <div class="grid md:grid-cols-3 gap-8 mb-8">
                 <!-- Navigation -->
+                <!-- Colonne 1: Raccourcis internes du site -->
                 <div>
                     <h3 class="text-red-500 font-bold text-xl mb-4 flex items-center">
                         <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -238,7 +261,7 @@
                     </nav>
                 </div>
 
-                <!-- À propos -->
+                <!-- Colonne 2: Description du site -->
                 <div>
                     <h3 class="text-red-500 font-bold text-xl mb-4 flex items-center">
                         <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -251,7 +274,7 @@
                     </p>
                 </div>
 
-                <!-- Contact -->
+                <!-- Colonne 3: Liens complémentaires et contact -->
                 <div>
                     <h3 class="text-red-500 font-bold text-xl mb-4 flex items-center">
                         <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -275,6 +298,7 @@
             </div>
 
             <!-- Copyright -->
+            <!-- Bloc Copyright + liens légaux -->
             <div class="border-t border-gray-800 pt-6 text-center">
                 <p class="text-gray-500 mb-2">&copy; 2024 Death Note Fan Site. Site de fans créé par passion.</p>
                 <p class="text-gray-600 text-sm">Death Note © Tsugumi Ohba & Takeshi Obata. Tous droits réservés aux ayants droit.</p>
@@ -289,13 +313,14 @@
         </div>
     </footer>
 
-    <!-- Bouton retour en haut -->
+    <!-- Bouton retour en haut (apparait après défilement) -->
     <button id="scroll-to-top" class="fixed bottom-8 right-8 bg-death-red text-white p-4 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-red-700 hover:scale-110 z-50">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
         </svg>
     </button>
 
+    <!-- Script principal: interactions (menu mobile, scroll top, etc.) -->
     <script src="Assets/Js/script.js"></script>
 </body>
 
